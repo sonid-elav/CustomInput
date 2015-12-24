@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom Input Element</title>
+    <link rel="stylesheet" href="custom-input.css">
+
+    <style>
+        .offer-row { }
+        .offer-row .row-wrapper { padding: 8px; overflow:auto; }
+        .offer-row .row-wrapper > div { float:left; }
+    </style>
+</head>
+<body>
+
+    <div class="offer-row">
+        <div class="row-wrapper">
+            <div id="custom-input-provider"></div>
+            <div id="custom-input-category"></div>
+            <div id="custom-input-pay-account"></div>
+        </div>
+    </div>
+
+    <script src="../libs/mootools.js"></script>
+    <script src="../libs/knockout.js"></script>
+    <script src="custom-input.js"></script>
+    <script>
+    (function(w){
+
+        var Providers = [
+            { text: 'John Papas', value: '1' },
+            { text: 'Kelly Johns', value: '2' },
+            { text: 'Maik Greko', value: '3' },
+            { text: 'Jelly Bean', value: '4' },
+            { text: 'Whipe Stre', value: '5' }
+        ];
+
+        var Categories = [
+            { text: 'Accomondation', value: '1' },
+            { text: 'Rental', value: '2' }
+        ];
+
+        var PayAccounts = [
+            { text: 'Paypal', value: '1' },
+            { text: 'IBAN', value: '2' }
+        ];
+
+        onSelectValue = function(value) {
+            console.log(value);
+        };
+
+        var baseOptions = {
+            autoComplete: true,
+            onSelectValue: onSelectValue
+        };
+
+        window.addEvent('load', function(){
+
+            new w.lfk.CustomInput(Object.merge(baseOptions, {
+                element: $('custom-input-provider'),
+                textHolder : 'Provider...',
+                placeholder : 'Type Provider...',
+                autoValues: Providers
+            }));
+
+            new w.lfk.CustomInput(Object.merge(baseOptions, {
+                element: $('custom-input-category'),
+                textHolder : 'Category...',
+                placeholder : 'Type Category...',
+                autoValues: Categories
+            }));
+
+            new w.lfk.CustomInput(Object.merge(baseOptions, {
+                element: $('custom-input-pay-account'),
+                textHolder : 'Payment Account...',
+                placeholder : 'Type Payment...',
+                autoValues: PayAccounts
+            }));
+
+        });
+
+    })(this);
+    </script>
+</body>
+</html>

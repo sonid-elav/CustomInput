@@ -1,0 +1,58 @@
+* { 
+    outline: none; 
+}
+div.custom-input-element {
+    margin: 4px;
+    cursor: hand !important;
+    width: 200px;
+}
+div.custom-input-element div,
+div.custom-input-element input {
+    margin: 0px;
+    border: none;
+    font-family: "Segoe UI", Times, serif;
+    font-size: 12pt;
+}
+div.custom-input-element div {
+    padding: 2px;
+}
+div.custom-input-element input {
+    padding: 2px;
+}
+div.custom-input-element div.text-holder {
+    font-size: 12pt;
+    color: #aaa;
+}
+div.custom-input-element .input-wrapper {
+    border: solid 1px #aaa;
+}
+div.custom-input-element .input-wrapper.editable {
+    border: solid 1px #aaa;
+}
+
+div.custom-input-element .auto-droplist {
+    border: solid 1px #eee;
+    padding: 0px;
+}
+div.custom-input-element .auto-droplist > ul {
+    list-style: none;;
+    padding:0px; margin:0px;
+}
+div.custom-input-element .auto-droplist > ul > li {
+    padding: 2px;
+}
+div.custom-input-element .auto-droplist > ul > li:hover {
+    background-color: #eee;
+
+}
+div.custom-input-element .auto-droplist > ul > li > a {
+    display: block;
+    padding: 4px;
+    text-decoration: none;
+    color: #666;
+}
+div.custom-input-element .auto-droplist > ul > li > a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}

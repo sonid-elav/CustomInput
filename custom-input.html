@@ -1,0 +1,19 @@
+<div class="column-element">
+
+    <div class="column-wrapper" data-bind="hasFocus: isEdit, css: { editable: isEdit }">
+        <input type="text" data-bind="value: value, 
+            visible: isEdit(), valueUpdate: 'keyup'" placeholder="Enter Value here..." />
+
+        <div data-bind="text: value, visible: !isEdit() && value()"></div>
+        <div data-bind="visible: !isEdit() && !value()" class="text-holder">Click here for edit...</div>
+    </div>
+
+    <div class="auto-droplist" data-bind="visible: isAutoComplete() && hasValues() && showAutoComplete()">
+        <ul data-bind="foreach: autoCompleteValues">
+            <li>
+                <a href="javascript:void(0);" data-bind="text: $data.text, click: $parent.autoCompleteSelect "></a>
+            </li>
+        </ul>
+    </div>
+
+</div>
